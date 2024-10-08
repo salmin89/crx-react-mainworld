@@ -35,10 +35,21 @@ ReactDOM.createRoot(div).render(React.createElement(Demo));
 ```
 
 
---
+---
 
-### 3. IMPORTANT!
-- there are some issues with react refresh which I solved in content-main.ts, with added comments.
+### 4. IMPORTANT NOTES!
+- there are some issues with react refresh in main world. This can be solved by excluding the specific component: (vite.config.ts):
+```typescript
+export default defineConfig({
+  plugins: [react({
+    exclude: [
+      // '**/*.tsx', // exclude all tsx files from fast refresh
+      'src/components/demo.tsx', // or just the one you want to inject in main world
+    ]
+  }), crx({ manifest })],
+});
+
+```
 
 - Main world can't use chrome.runtime.connect without defining externally connectable URLs in manifest.
 
