@@ -38,7 +38,7 @@ ReactDOM.createRoot(div).render(React.createElement(Demo));
 --
 
 ### 3. IMPORTANT!
-- there are so issues with react refresh which I solved in content-main.ts, with added comments.
+- there are some issues with react refresh which I solved in content-main.ts, with added comments.
 
 - Main world can't use chrome.runtime.connect without defining externally connectable URLs in manifest.
 
